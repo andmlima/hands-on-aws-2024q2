@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+      
+  pre_build:
+    commands:
+    - cd cicd   #change directory
+    - chmod +x apply-terraform.sh aws-configure-profile.sh install-terraform.sh
+    - ./install-terraform.sh
+    - ./aws-configure-profile.sh
+
+  build:
+    commands:
+    - ./apply-terraform.sh

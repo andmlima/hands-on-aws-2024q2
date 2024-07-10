@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce				### storageClass do tipo Disk, então temos que usar opção ReadWriteOnce, se fosse File, poderia ser ReadWriteMany
+  storageClassName: gp2			### verificar aqui qual nome Storage Class usar 
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: 5Gi
