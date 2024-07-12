@@ -34,3 +34,9 @@ terraform apply
   kubectl get hpa						: aguardar 5 minutos uso cpu
 
   kubectl get all
+
+* ## instalar Prometheus e Grafana
+  
+  cd k8s-infra-prometheus-grafana
+
+  kubectl apply -f prometheus-grafana.yaml 
