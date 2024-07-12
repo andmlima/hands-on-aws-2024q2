@@ -19,8 +19,8 @@ module "eks" {
 
   eks_managed_node_groups = {
     default = {
-      min_size       = 2
-      max_size       = 2
+      min_size       = 1
+      max_size       = 4
       desired_size   = 2
       instance_types = var.aws_eks_managed_node_groups_instance_types
       tags           = var.aws_project_tags
